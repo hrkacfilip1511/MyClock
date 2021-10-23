@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  background-image: url("wildcat.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.clock img {
+  border-radius: 50%;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.clock {
+  border: 2px solid white;
+  margin-left: 105px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  background: black;
+}
+.number {
+  color: greenyellow;
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  transform: rotate(var(--rotation));
+}
+.num1 {
+  --rotation: 30deg;
+}
+.num2 {
+  --rotation: 60deg;
+}
+.num3 {
+  --rotation: 90deg;
+}
+.num4 {
+  --rotation: 120deg;
+}
+.num5 {
+  --rotation: 150deg;
+}
+.num6 {
+  --rotation: 180deg;
+}
+.num7 {
+  --rotation: 210deg;
+}
+.num8 {
+  --rotation: 240deg;
+}
+.num9 {
+  --rotation: 270deg;
+}
+.num10 {
+  --rotation: 300deg;
+}
+.num11 {
+  --rotation: 330deg;
+}
+
+.hours {
+  --rotation: 0;
+  position: absolute;
+  background: radial-gradient(green, yellow);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 5px;
+  height: 30%;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.minutes {
+  --rotation: 185;
+  position: absolute;
+  background: radial-gradient(green, yellow);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 3px;
+  height: 35%;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.seconds {
+  --rotation: 97;
+  position: absolute;
+  background: radial-gradient(green, yellow);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 2px;
+  height: 47%;
+  bottom: 50%;
+  z-index: 1;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(green, yellow);
+  border-radius: 50%;
+  top: 50%;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
